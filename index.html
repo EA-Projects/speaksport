@@ -46,24 +46,22 @@
                                    <img src="public/images/speaksport-white.svg" alt="SpeakSport">
                                 </a>
                             </div>
-                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="navbar-toggler-icon"></span>
-                            </button>
-                
-                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                                <button class="navbar-toggler is-close" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
+                            <div class="inner-buttons">
+                                <a href="https://calendly.com/bk-speaksport/30min" target="_blank" class="button">Book a Demo</a>
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                                     <span class="navbar-toggler-icon"></span>
                                 </button>
-                                <div class="inner-links">
-                                    <div class="inner-navigation-links">
-                                        <a href="#benefits">Benefits</a>
-                                        <a href="#impact">Impact</a>
-                                        <a href="#calculator">Calculator</a>
-                                        <a href="#resources">Resources</a>
+                                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                    <div class="inner-links">
+                                        <div class="inner-navigation-links">
+                                            <a href="#benefits">Benefits</a>
+                                            <a href="#impact">Impact</a>
+                                            <a href="#calculator">Calculator</a>
+                                            <a href="#resources">Resources</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <a href="https://calendly.com/bk-speaksport/30min" target="_blank" class="button">Book a Demo</a>
                         </div>
                     </div>
                 </div>
@@ -83,12 +81,17 @@
                         </div>
                     </div>
                     <div class="col-12 col-lg-7">
-                        <div class="inner-hero-graphic" data-fade>
+                        <div class="inner-hero-graphic stopped" data-fade>
                             <div class="inner-circle is-1"></div>
                             <div class="inner-circle is-2"></div>
                             <div class="inner-circle is-3"></div>
                             <img src="public/images/phone-icon.svg" class="inner-icon is-phone">
                             <img src="public/images/icon-play.svg" class="inner-icon is-play">
+
+                            <!-- Tooltip -->
+                             <div class="inner-tooltip">
+                                <p>Click & Listen</p>
+                             </div>
 
                             <!-- Audio -->
                             <audio id="hero-audio" src="public/speaksports-audio.mp3"></audio>
@@ -136,21 +139,27 @@
                 <div class="row">
                     <div class="col-12 col-lg-4">
                         <div class="inner-card" data-fade>
-                            <img src="public/images/clock-icon.png">
+                            <div class="wrapper-icon">
+                                <img src="public/images/clock-icon.png">
+                            </div>
                             <h4>Business Hours and Beyond</h4>
                             <p class="medium">Interact with your customers during business hours and in the hours after close.</p>
                         </div>
                     </div>
                     <div class="col-12 col-lg-4">
                         <div class="inner-card dark-green" data-fade>
-                            <img src="public/images/value-icon.png">
+                            <div class="wrapper-icon">
+                                <img src="public/images/value-icon.png">
+                            </div>
                             <h4>Turn First-Timers into Lifetime Value</h4>
                             <p class="medium">Enhance retention by filling your customer database with new contact information in your sleep.</p>
                         </div>
                     </div>
                     <div class="col-12 col-lg-4">
                         <div class="inner-card brown" data-fade>
-                            <img src="public/images/transaction-icon.png">
+                            <div class="wrapper-icon">
+                                <img src="public/images/transaction-icon.png">
+                            </div>
                             <h4>Safeguard Transactions with Call Transcription</h4>
                             <p class="medium">Turn call records into evidence to fight chargebacks and minimize lost revenue</p>
                         </div>
@@ -159,17 +168,19 @@
             </div>
         </section>
 
-        <section class="row-feature">
+        <section class="row-feature is-left">
             <div class="container" data-fade>
                 <div class="row align-items-center">
                     <div class="col-12 col-lg-6">
                         <div class="inner-content">
-                            <h2 data-fade>Customizable Greeting</h2>
-                            <p data-fade class="large">Capture the unique identity and style of your property with personalized speech.</p>
+                            <h2>Customizable Greeting</h2>
+                            <p class="large">Capture the unique identity and style of your property with personalized speech.</p>
                         </div>
                     </div>
-                    <div class="col-12 col-lg-6 text-center text-md-right">
-                        <img data-fade src="public/images/customizable-greeting.webp" alt="Customizable Greeting">
+                    <div class="col-12 col-lg-6">
+                        <div class="inner-graphic">
+                            <img src="public/images/customizable-greeting.webp" alt="Customizable Greeting">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -179,12 +190,14 @@
             <div class="container" data-fade>
                 <div class="row align-items-center">
                     <div class="col-12 col-lg-6 order-2 order-lg-0">
-                        <img data-fade src="public/images/understand-your-customer.webp" alt="Understand Your Customer">
+                        <div class="inner-graphic">
+                            <img src="public/images/understand-your-customer.webp" alt="Understand Your Customer">
+                        </div>
                     </div>
                     <div class="col-12 col-lg-6">
                         <div class="inner-content">
-                            <h2 data-fade>Understand Your Customer</h2>
-                            <p data-fade class="large">Stop guessing your customer preferences - leverage detailed reporting on guest requests from bookings to amenities to optimize service preemptively, and keep them eager to return.</p>
+                            <h2>Understand Your Customer</h2>
+                            <p class="large">Stop guessing your customer preferences - leverage detailed reporting on guest requests from bookings to amenities to optimize service preemptively, and keep them eager to return.</p>
                         </div>
                     </div>
                 </div>
@@ -217,69 +230,90 @@
                         </div>
                         <div class="wrapper-calculator" data-fade>
                             <div class="grid">
-                                <div class="row-field">
-                                    <div class="inner-field">
-                                        <label>Inbound Calls per Day</label>
-                                        <input type="number" min="0" id="callsPerDay" value="80">
-                                    </div>
-
-                                    <div class="inner-field">
-                                        <label>% of Calls Missed</label>
-                                        <input type="number" min="0" id="missedPct" value="20">
-                                    </div>
-                                </div>
-
-                                <div class="row-field">
-                                    <div class="inner-field">
-                                        <label>% of Calls that are Bookings</label>
-                                        <input type="number" min="0" id="bookingPct" value="65">
-                                    </div>
-
-                                    <div class="inner-field">
-                                        <label>Average Revenue per Group ($)</label>
-                                        <input type="number" min="0" id="revenuePerGroup" value="140">
-                                        <p class="hint">
-                                            Including ancillary spend, averaging 43% for 18-hole property per recent industry studies
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="row-field is-booking-mode">
-                                    <div class="inner-field">
-                                        <div class="inner-flex">
-                                            <p>Booking Mode:</p>
-                                            <label>
-                                                <input type="radio" name="mode" value="integrated" checked>
-                                                Integrated (AI books directly)
-                                            </label>
-                                            <label>
-                                                <input type="radio" name="mode" value="redirect">
-                                                Online Redirect (AI pushes to booking engine)
-                                            </label>
+                                <!-- Call Analytics -->
+                                <div class="analytics">
+                                    <h4>Call Analytics</h4>
+                                    <div class="row-field">
+                                        <div class="inner-field">
+                                            <label>Inbound Calls per Day</label>
+                                            <input type="number" id="callsPerDay" value="80">
                                         </div>
-                                        <p class="hint">
-                                        Percentage of missed callers who would book online anyway (most courses see 20–30%)
-                                        </p>
+                                        <div class="inner-field">
+                                            <label>Percentage of Calls Missed (%)</label>
+                                            <input type="number" id="missedPct" value="15">
+                                        </div>
+                                    </div>
+                                    <div class="row-field">
+                                        <div class="inner-field">
+                                            <label>Booking Conversion Rate (%)</label>
+                                            <input type="number" id="bookingPct" value="75">
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
 
-                            <div class="results">
-                                <h4>Recovered Revenue</h4>
-                                <div class="inner-results">
-                                    <div class="inner-result-block">
-                                        <p class="medium">Per Day:</p>
-                                        <p class="result">$<span id="perDay">0</span></p>
-                                    </div>
-                                    <div class="inner-result-block">
-                                        <p class="medium">Per Month:</p>
-                                        <p class="result">$<span id="perMonth">0</span></p>
-                                    </div>
-                                    <div class="inner-result-block">
-                                        <p class="medium">Per Year:</p>
-                                        <p class="result">$<span id="perYear">0</span></p>
+                                <!-- Revenue Metrics -->
+                                <div class="revenue-metrics">
+                                    <h4>Revenue Metrics</h4>
+                                    <div class="row-field">
+                                        <div class="inner-field">
+                                            <label>Average Revenue per Group ($)</label>
+                                            <input type="number" id="revenuePerGroup" value="140">
+                                            <p class="subtext">We recommend accounting 43% additional ancillary revenue per player beyond the booking fee, per recent industry studies</p>
+                                        </div>
+                                        <div class="inner-field">
+                                            <label>Online Booking Substitution Rate (%)</label>
+                                            <input type="number" id="substitutionPct" value="25">
+                                            <p class="subtext">Percentage of missed callers who would book online anyway (most courses see 20–30%)</p>
+                                        </div>
                                     </div>
                                 </div>
-                                <a href="https://calendly.com/bk-speaksport/30min" target="_blank" class="button white">Get Started</a>
+
+                                <!-- Revenue Recovery Potential -->
+                                <div class="recovery-potential">
+                                    <div class="results">
+                                        <h4 class="mb-2">Revenue Recovery Potential</h4>
+                                        <p class="medium text-center">Based on your current call metrics, here's what you could recover:</p>
+                                        <div class="inner-results">
+                                            <div class="inner-result-block">
+                                                <p class="medium">Daily Recovery</p>
+                                                <p id="dailyRecovery" class="result">$0</p>
+                                            </div>
+                                            <div class="inner-result-block">
+                                                <p class="medium">Monthly Recovery</p>
+                                                <p id="monthlyRecovery" class="result">$0</p>
+                                            </div>
+                                            <div class="inner-result-block">
+                                                <p class="medium">Annual Recovery</p>
+                                                <p id="annualRecovery" class="result">$0</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="insights">
+                                        <h4>Key Insights</h4>
+                                        <div class="inner-insights-result">
+                                            <p>Missed calls per day:</p>
+                                            <div class="divider"></div>
+                                            <span id="missedCalls">0</span>
+                                        </div>
+                                        <div class="inner-insights-result">
+                                            <p>Lost bookings per day:</p>
+                                            <div class="divider"></div>
+                                            <span id="lostBookings">0</span>
+                                        </div>
+                                        <div class="inner-insights-result">
+                                            <p>Recovery opportunity:</p>
+                                            <div class="divider"></div>
+                                            <span id="recoveryOpportunity">0%</span>
+                                        </div>
+                                        <div class="inner-insights-result">
+                                            <p>Potential ROI:</p>
+                                            <div class="divider"></div>
+                                            <span id="potentialROI">Low</span>
+                                        </div>
+                                        <a href="https://calendly.com/bk-speaksport/30min" target="_blank" class="button">Start Recovering Revenue</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -297,21 +331,21 @@
                     </div>
                     <div class="col-12">
                         <div class="slider-resources" data-fade>
-                            <a href="#" target="_blank" class="resource-card">
+                            <a href="https://www.youtube.com/watch?v=Z4_mOo1gcgM&ab_channel=NGCOA" target="_blank" class="resource-card">
                                 <h4>Golf Business LIVE - Tech Talks | Special Guest B.K. Browne</h4>
                                 <div class="bottom-area">
                                     <img src="public/images/ngcoa.png" class="ngcoa" alt="NGCOA">
                                     <span class="tag">Podcast</span>
                                 </div>
                             </a>
-                            <a href="#" target="_blank" class="resource-card">
+                            <a href="https://www.youtube.com/watch?v=XsqWCdrobKo&ab_channel=Club%2BResortBusiness" target="_blank" class="resource-card">
                                 <h4>B.K. Browne Joins the Club + Resort Talks Podcast to Introduce SpeakSport — An A.I. Tee Time Service</h4>
                                 <div class="bottom-area">
                                     <img src="public/images/club-resort.png" class="club-resort" alt="Club Resort Business">
                                     <span class="tag">Podcast</span>
                                 </div>
                             </a>
-                            <a href="#" target="_blank" class="resource-card">
+                            <a href="https://www.golfbusinesstechnology.com/speaksport-to-showcase-revolutionary-ai-voice-technology-at-the-2025-pga-show/" target="_blank" class="resource-card">
                                 <h4>SpeakSport to Showcase Revolutionary AI-Voice Technology at the 2025 PGA Show</h4>
                                 <div class="bottom-area">
                                     <img src="public/images/pga.png" class="pga" alt="PGA">
@@ -344,14 +378,15 @@
                             <img src="public/images/speaksport.svg" alt="SpeakSport">
                             <div class="social-link">
                                 <a href="mailto:bk@speaksport.ai">bk@speaksport.ai</a>
-                                <a href="#" target="_blank">
+                                <a href="https://www.linkedin.com/company/speaksport/" target="_blank">
                                     <img src="public/images/linkedin-icon.svg" alt="LinkedIn">
                                 </a>
                             </div>
                             <div class="inner-links">
                                 <a href="https://calendly.com/bk-speaksport/30min" target="_blank">Book a Demo</a>
-                                <a href="#" target="_blank">Privacy Policy</a>
-                                <a href="#" target="_blank">Terms & Conditions</a>
+                                <a href="faqs.html">FAQs</a>
+                                <a href="privacy-policy.html">Privacy Policy</a>
+                                <a href="privacy.html">Terms & Conditions</a>
                                 <span>© SpeakSport 2025</span>
                             </div>
                         </div>

@@ -25,34 +25,39 @@ window.addEventListener('load', function() {
     });
 
     // Calculator for ROI
-    function calculateROI() {
-        const callsPerDay = Number($("#callsPerDay").val());
-        const missedPct = Number($("#missedPct").val());
-        const bookingPct = Number($("#bookingPct").val());
-        const revenuePerGroup = Number($("#revenuePerGroup").val());
-        const mode = $("input[name='mode']:checked").val();
+    function calculate() {
+        let callsPerDay = Number($("#callsPerDay").val());
+        let missedPct = Number($("#missedPct").val());
+        let bookingPct = Number($("#bookingPct").val());
+        let revenuePerGroup = Number($("#revenuePerGroup").val());
+        let substitutionPct = Number($("#substitutionPct").val());
 
-        const substitutionPct = mode === "integrated" ? 25 : 45;
+        let missedCalls = (callsPerDay * missedPct) / 100;
+        let missedBookings = (missedCalls * bookingPct) / 100;
+        let recoveredPerDay = missedBookings * revenuePerGroup * (1 - substitutionPct / 100);
+        let recoveredPerMonth = recoveredPerDay * 30;
+        let recoveredPerYear = recoveredPerDay * 365;
 
-        const missedCalls = (callsPerDay * missedPct) / 100;
-        const missedBookings = (missedCalls * bookingPct) / 100;
-        const recoveredPerDay = missedBookings * revenuePerGroup * (1 - substitutionPct / 100);
-        const recoveredPerMonth = recoveredPerDay * 30;
-        const recoveredPerYear = recoveredPerDay * 365;
+        // Key insights
+        let lostBookingsPerDay = missedBookings;
+        let recoveryOpportunity = 100 - substitutionPct;
+        let potentialROI = recoveredPerYear > 100000 ? "High" : recoveredPerYear > 50000 ? "Medium" : "Low";
 
-        $("#perDay").text(recoveredPerDay.toLocaleString());
-        $("#perMonth").text(recoveredPerMonth.toLocaleString());
-        $("#perYear").text(recoveredPerYear.toLocaleString());
+        // Update DOM
+        $("#dailyRecovery").text(`$${Math.round(recoveredPerDay).toLocaleString()}`);
+        $("#monthlyRecovery").text(`$${Math.round(recoveredPerMonth).toLocaleString()}`);
+        $("#annualRecovery").text(`$${Math.round(recoveredPerYear).toLocaleString()}`);
+        $("#missedCalls").text(Math.round(missedCalls));
+        $("#lostBookings").text(Math.round(lostBookingsPerDay));
+        $("#recoveryOpportunity").text(`${recoveryOpportunity}%`);
+        $("#potentialROI").text(potentialROI);
     }
 
-    // Ejecutar al cargar
-    $(document).ready(function() {
-        calculateROI();
+    // Bind events
+    $("input").on("input", calculate);
 
-        // Escuchar cambios en todos los inputs
-        $("#callsPerDay, #missedPct, #bookingPct, #revenuePerGroup").on("input change", calculateROI);
-        $("input[name='mode']").on("change", calculateROI);
-    });
+    // Initial calc
+    calculate();
 
     // Slick slider for Resources
     $('.slider-resources').slick({
@@ -81,7 +86,39 @@ window.addEventListener('load', function() {
         ]
     });
 
-    // Animations
+    // Animations on parallax
+    if (window.matchMedia('(min-width: 575px)').matches) {
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.fromTo(".row-feature.is-left .inner-graphic img", {
+            y: -40
+            },
+            {
+            y: 60,
+            ease: "none",
+            scrollTrigger: {
+                trigger: ".row-feature.is-left",
+                start: "top bottom",
+                end: "bottom top",
+                scrub: true,
+            }
+        });
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.fromTo(".row-feature.is-right .inner-graphic img", {
+            y: -40
+            },
+            {
+            y: 60,
+            ease: "none",
+            scrollTrigger: {
+                trigger: ".row-feature.is-right",
+                start: "top bottom",
+                end: "bottom top",
+                scrub: true,
+            }
+        });
+    }
+
+    //   Animations on fade in
     let animatedElements = new Set(); // Para evitar reanimaciones
 
     let observer = new IntersectionObserver((entries) => {
