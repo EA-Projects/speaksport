@@ -327,6 +327,8 @@ nav.navbar{
     padding: 220px 0 170px;
     .inner-hero-content{
         max-width: 470px;
+        position: relative;
+        z-index: 1;
         h1{
             margin-bottom: 30px;
         }
@@ -703,6 +705,9 @@ nav.navbar{
             padding: 50px 40px 70px;
             margin: 0 auto 20px;
             max-width: 500px;
+            h4{
+                min-height: auto;
+            }
         }
     }
     @media(max-width: 575px){
@@ -1091,6 +1096,7 @@ nav.navbar{
             .results{
                 padding: 30px 20px;
                 border-radius: 8px;
+                margin: 15px 0;
                 .inner-results{
                     .inner-result-block{
                         padding: 20px;
@@ -1103,6 +1109,10 @@ nav.navbar{
                         }
                     }
                 }
+            }
+            .insights{
+                padding: 30px 20px;
+                border-radius: 8px;
             }
         }
     }
