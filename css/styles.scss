@@ -1033,6 +1033,9 @@ nav.navbar{
                     color: $green;
                     font-size: 18px;
                     font-weight: 600;
+                    &.is-red{
+                        color: rgb(194, 28, 28);
+                    }
                 }
             }
             .button{
@@ -1266,7 +1269,7 @@ footer{
             display: flex;
             align-items: center;
             justify-content: flex-end;
-            gap: 25px;
+            gap: 10px;
             margin: 35px 0;
             a{
                 font-size: 18px;
