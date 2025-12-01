@@ -1375,19 +1375,27 @@ footer{
 #terms-body{
     h3{
         padding-top: 60px;
-        margin-bottom: 10px;
+        margin-bottom: 20px;
         &:first-of-type{
             padding-top: 0;
         }
     }
-    a{
+    a:not(.button){
         color: $dark-green;
+        text-decoration: underline;
+    }
+    .button{
+        margin-bottom: 15px;
     }
     p{
         margin-bottom: 15px;
+        &:first-of-type{
+            margin-top: 0;
+        }
     }
     ul,ol{
         padding-left: 20px;
+        margin-bottom: 20px;
         li{
             font-size: 15px;
             line-height: 140%;
@@ -1395,6 +1403,9 @@ footer{
             letter-spacing: -0.02em;
             color: #000000;
             margin-bottom: 10px;
+            &::marker{
+                font-weight: 600;
+            }
             &:last-child{
                 margin-bottom: 0;
             }
