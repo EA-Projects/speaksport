@@ -1376,9 +1376,6 @@ footer{
     h3{
         padding-top: 60px;
         margin-bottom: 20px;
-        &:first-of-type{
-            padding-top: 0;
-        }
     }
     a:not(.button){
         color: $dark-green;
