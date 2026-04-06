@@ -1152,6 +1152,159 @@ img{
 }
 }
 
+#how-it-works{
+    padding-bottom: 50px;
+    .wrapper-content{
+        padding: 70px 50px;
+        background-color: #F2F2F2;
+        border-radius: 20px;
+        .inner-top-area,
+        .inner-bottom-area{
+            max-width: 900px;
+            text-align: center;
+            margin: 0 auto 50px;
+            h4{
+                color: $dark-green;
+            }
+            h3{
+                margin: 30px 0;
+            }
+        }
+        .wrapper-steps{
+            display: flex;
+            gap: 35px;
+            .visual-area{
+                width: 100%;
+                max-width: 483px;
+                border-radius: 12px;
+                overflow: hidden;
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: left;
+                }
+            }
+            .steps-area{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                gap: 15px;
+                .inner-step{
+                    width: 100%;
+                    padding: 25px 30px;
+                    border-radius: 12px;
+                    background-color: $white;
+                    border: 2px solid #05843F;
+                    h4{
+                        display: inline-flex;
+                        align-items: center;
+                        justify-content: flex-start;
+                        gap: 8px;
+                        font-size: 28px;
+                        color: #05843F;
+                        margin-bottom: 12px;
+                        span{
+                            font-size: 16px;
+                            line-height: 0;
+                            border-radius: 50%;
+                            color: $white;
+                            width: 26px;
+                            height: 26px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            background-color: #05843F;
+                            padding-right: 1px;
+                        }
+                    }
+                    &:nth-child(2){
+                        border-color: $dark-green;
+                        h4{
+                            color: $dark-green;
+                            span{
+                                background-color: $dark-green;
+                            }
+                        }
+                    }
+                    &:nth-child(3){
+                        border-color: $brown;
+                        h4{
+                            color: $brown;
+                            span{
+                                background-color: $brown;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .inner-bottom-area{
+            max-width: none;
+            padding-top: 40px;
+            margin-top: 50px;
+            border-top: 1px solid $dark-green;
+            margin-bottom: 0;
+            h4{
+                margin-bottom: 10px;
+            }
+            p{
+                max-width: 900px;
+                margin: 0 auto;
+            }
+        }
+    }
+    @media(max-width: 991px){
+        .wrapper-content{
+            .wrapper-steps{
+                flex-direction: column;
+                .visual-area{
+                    max-width: 100%;
+                }
+            }
+            .inner-bottom-area{
+                h4{
+                    margin-bottom: 10px;
+                }
+                p{
+                    max-width: 100%;
+                    margin: 0 auto;
+                }
+            }
+        }
+    }
+    @media(max-width: 575px){
+        .wrapper-content{
+            padding: 50px 20px 30px;
+            .wrapper-steps{
+                flex-direction: column;
+                gap: 15px;
+                .visual-area{
+                    border-radius: 8px;
+                }
+                .steps-area{
+                    .inner-step{
+                        padding: 20px;
+                        border-radius: 8px;
+                        h4{
+                            font-size: 18px;
+                            span{
+                                min-width: 22px;
+                                height: 22px;
+                                font-size: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+            .inner-bottom-area{
+                padding-top: 20px;
+                margin-top: 30px;
+            }
+        }
+    }
+}
+
 #resources{
 overflow: hidden;
 padding-bottom: 140px;
